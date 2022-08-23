@@ -1,6 +1,6 @@
 from django.urls import reverse
 
-from {{ cookiecutter.project_slug }}.users.models import User
+from src.users.models import User
 
 
 class TestUserAdmin:

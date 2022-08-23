@@ -95,7 +95,7 @@ def remove_gulp_files():
 
 
 def remove_sass_files():
-    shutil.rmtree(os.path.join("{{cookiecutter.project_slug}}", "static", "sass"))
+    shutil.rmtree(os.path.join("src", "static", "sass"))
 
 
 def remove_packagejson_file():
@@ -107,10 +107,8 @@ def remove_packagejson_file():
 def remove_celery_files():
     file_names = [
         os.path.join("config", "celery_app.py"),
-        os.path.join("{{ cookiecutter.project_slug }}", "users", "tasks.py"),
-        os.path.join(
-            "{{ cookiecutter.project_slug }}", "users", "tests", "test_tasks.py"
-        ),
+        os.path.join("src", "users", "tasks.py"),
+        os.path.join("src", "users", "tests", "test_tasks.py"),
     ]
     for file_name in file_names:
         os.remove(file_name)
@@ -310,26 +308,22 @@ def remove_aws_dockerfile():
 
 def remove_drf_starter_files():
     os.remove(os.path.join("config", "api_router.py"))
-    shutil.rmtree(os.path.join("{{cookiecutter.project_slug}}", "users", "api"))
+    shutil.rmtree(os.path.join("src", "users", "api"))
     os.remove(
         os.path.join(
             "{{cookiecutter.project_slug}}", "users", "tests", "test_drf_urls.py"
         )
     )
     os.remove(
-        os.path.join(
-            "{{cookiecutter.project_slug}}", "users", "tests", "test_drf_views.py"
-        )
+        os.path.join("src", "users", "tests", "test_drf_views.py")
     )
     os.remove(
-        os.path.join(
-            "{{cookiecutter.project_slug}}", "users", "tests", "test_swagger.py"
-        )
+        os.path.join("src", "users", "tests", "test_swagger.py")
     )
 
 
 def remove_storages_module():
-    os.remove(os.path.join("{{cookiecutter.project_slug}}", "utils", "storages.py"))
+    os.remove(os.path.join("src", "utils", "storages.py"))
 
 
 def main():
