@@ -1,0 +1,133 @@
+[tool.poetry]
+name = "{{cookiecutter.project_slug}}"
+version = "0.1.0"
+description = ""
+authors = ["Raúl Santos <borfast@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11.0"
+Django = "*"
+argon2-cffi = "*"
+django-environ = "*"
+django-model-utils = "*"
+psycopg2 = "*"
+gunicorn = "*"
+django-allauth = "*"
+tzdata = "*"
+uvicorn = "*"
+django-redis = "*"
+redis = "*"
+django-crispy-forms = "*"
+django-extensions = "*"
+Pillow = "*"
+python-slugify = "*"
+pre-commit = "*"
+
+{%- if cookiecutter.frontend_pipeline == 'Django Compressor' %}
+rcssmin = "*"
+{%- endif %}
+
+{%- if cookiecutter.use_whitenoise == 'y' %}
+whitenoise = "*"
+{%- endif %}
+
+{%- if cookiecutter.use_docker == "y" or cookiecutter.windows == "n" %}
+hiredis = "*"
+{%- endif %}
+
+{%- if cookiecutter.use_celery == "y" %}
+celery = "*"
+django-celery-beat = "*"
+{%- if cookiecutter.use_docker == 'y' %}
+flower = "*"
+{%- endif %}
+{%- endif %}
+
+{%- if cookiecutter.use_async == 'y' %}
+uvicorn = {extras = ["standard"], version = "*"}
+{%- endif %}
+
+{%- if cookiecutter.frontend_pipeline == 'Django Compressor' %}
+django-compressor = "*"
+{%- endif %}
+
+{%- if cookiecutter.use_drf == 'y' %}
+# Django REST Framework
+djangorestframework = "*"
+django-cors-headers = "*"
+# DRF-spectacular for api documentation
+drf-spectacular = "*"
+{%- endif %}
+
+{%- if cookiecutter.use_celery == 'y' %}
+pylint-celery = "*"
+{%- endif %}
+
+{%- if cookiecutter.use_whitenoise == 'n' %}
+Collectfast = "*"
+{%- endif %}
+{%- if cookiecutter.use_sentry == "y" %}
+sentry-sdk = "*"
+{%- endif %}
+
+{%- if cookiecutter.cloud_provider == 'AWS' %}
+django-storages = {extras = ["boto3"], version = "*"}
+{%- elif cookiecutter.cloud_provider == 'GCP' %}
+django-storages = {extras = ["google"], version = "*"}
+{%- endif %}
+
+{%- if cookiecutter.mail_service == 'Mailgun' %}
+django-anymail = {extras = ["mailgun"], version = "*"}
+{%- elif cookiecutter.mail_service == 'Amazon SES' %}
+django-anymail = {extras = ["amazon_ses"], version = "*"}
+{%- elif cookiecutter.mail_service == 'Mailjet' %}
+django-anymail = {extras = ["mailjet"], version = "*"}
+{%- elif cookiecutter.mail_service == 'Mandrill' %}
+django-anymail = {extras = ["mandrill"], version = "*"}
+{%- elif cookiecutter.mail_service == 'Postmark' %}
+django-anymail = {extras = ["postmark"], version = "*"}
+{%- elif cookiecutter.mail_service == 'Sendgrid' %}
+django-anymail = {extras = ["sendgrid"], version = "*"}
+{%- elif cookiecutter.mail_service == 'SendinBlue' %}
+django-anymail = {extras = ["sendinblue"], version = "*"}
+{%- elif cookiecutter.mail_service == 'SparkPost' %}
+django-anymail = {extras = ["sparkpost"], version = "*"}
+{%- elif cookiecutter.mail_service == 'Other SMTP' %}
+django-anymail = "*"
+{%- endif %}
+
+
+
+
+
+[tool.poetry.dev-dependencies]
+mypy = "*"
+pytest = "*"
+pytest-django = "*"
+pytest-sugar = "*"
+pylint-django = "*"
+coverage = "*"
+flake8 = "*"
+flake8-isort = "*"
+black = "*"
+django-debug-toolbar = "*"
+django-coverage-plugin = "*"
+Werkzeug = {extras = ["watchdog"], version = "*"}
+ipdb = "*"
+psycopg2-binary = "*"
+django-stubs = "*"
+factory-boy = "*"
+
+{%- if cookiecutter.use_async == 'y' or cookiecutter.use_celery == 'y' %}
+watchfiles = "*"
+{%- endif %}
+
+{%- if cookiecutter.use_drf == "y" %}
+djangorestframework-stubs = "*"
+{%- endif %}
+
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
