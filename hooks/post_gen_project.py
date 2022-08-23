@@ -310,9 +310,7 @@ def remove_drf_starter_files():
     os.remove(os.path.join("config", "api_router.py"))
     shutil.rmtree(os.path.join("src", "users", "api"))
     os.remove(
-        os.path.join(
-            "{{cookiecutter.project_slug}}", "users", "tests", "test_drf_urls.py"
-        )
+        os.path.join("src", "users", "tests", "test_drf_urls.py")
     )
     os.remove(
         os.path.join("src", "users", "tests", "test_drf_views.py")
