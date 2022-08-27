@@ -3,7 +3,7 @@ Docker Remote Debugging
 
 To connect to python remote interpreter inside docker, you have to make sure first, that Pycharm is aware of your docker.
 
-Go to *Settings > Build, Execution, Deployment > Docker*. If you are on linux, you can use docker directly using its socket  `unix:///var/run/docker.sock`, if you are on Windows or Mac, make sure that you have docker-machine installed, then you can simply *Import credentials from Docker Machine*.
+Go to *Settings > Build, Execution, Deployment > Docker*. If you are on linux, you can use docker directly using its socket  `unix:///var/run/docker.sock`, if you are on Mac, make sure that you have docker-machine installed, then you can simply *Import credentials from Docker Machine*.
 
 .. image:: images/1.png
 

@@ -70,23 +70,6 @@ def remove_utility_files():
     shutil.rmtree("utility")
 
 
-def remove_heroku_files():
-    file_names = ["Procfile", "runtime.txt"]
-    for file_name in file_names:
-        if (
-            file_name == "requirements.txt"
-            and "{{ cookiecutter.ci_tool }}".lower() == "travis"
-        ):
-            # don't remove the file if we are using travisci but not using heroku
-            continue
-        os.remove(file_name)
-    remove_heroku_build_hooks()
-
-
-def remove_heroku_build_hooks():
-    shutil.rmtree("bin")
-
-
 def remove_gulp_files():
     file_names = ["gulpfile.js"]
     for file_name in file_names:
@@ -353,20 +336,11 @@ def main():
     ):
         remove_aws_dockerfile()
 
-    if "{{ cookiecutter.use_heroku }}".lower() == "n":
-        remove_heroku_files()
-    elif "{{ cookiecutter.frontend_pipeline }}" != "Django Compressor":
-        remove_heroku_build_hooks()
-
-    if (
-        "{{ cookiecutter.use_docker }}".lower() == "n"
-        and "{{ cookiecutter.use_heroku }}".lower() == "n"
-    ):
+    if "{{ cookiecutter.use_docker }}".lower() == "n":
         if "{{ cookiecutter.keep_local_envs_in_vcs }}".lower() == "y":
             print(
-                INFO + ".env(s) are only utilized when Docker Compose and/or "
-                "Heroku support is enabled so keeping them does not "
-                "make sense given your current setup." + TERMINATOR
+                INFO + ".env(s) are only utilized when Docker Compose is enabled so keeping them does not make sense "
+                       "given your current setup." + TERMINATOR
             )
         remove_envs_and_associated_files()
     else:

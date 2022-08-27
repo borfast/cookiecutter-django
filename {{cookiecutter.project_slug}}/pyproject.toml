@@ -31,7 +31,7 @@ rcssmin = "*"
 whitenoise = "*"
 {%- endif %}
 
-{%- if cookiecutter.use_docker == "y" or cookiecutter.windows == "n" %}
+{%- if cookiecutter.use_docker == "y" %}
 hiredis = "*"
 {%- endif %}
 

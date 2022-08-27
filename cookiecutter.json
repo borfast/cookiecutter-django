@@ -14,7 +14,6 @@
     "Not open source"
   ],
   "timezone": "UTC",
-  "windows": "n",
   "use_pycharm": "n",
   "use_docker": "n",
   "postgresql_version": [
@@ -51,7 +50,6 @@
   "use_mailhog": "n",
   "use_sentry": "n",
   "use_whitenoise": "n",
-  "use_heroku": "n",
   "ci_tool": [
     "None",
     "Travis",
