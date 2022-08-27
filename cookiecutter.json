@@ -14,8 +14,8 @@
     "Not open source"
   ],
   "timezone": "UTC",
-  "use_pycharm": "n",
-  "use_docker": "n",
+  "use_pycharm": "y",
+  "use_docker": "y",
   "postgresql_version": [
     "14",
     "13",
@@ -24,8 +24,8 @@
     "10"
   ],
   "cloud_provider": [
-    "AWS",
     "GCP",
+    "AWS",
     "None"
   ],
   "mail_service": [
@@ -48,14 +48,14 @@
   ],
   "use_celery": "n",
   "use_mailhog": "n",
-  "use_sentry": "n",
-  "use_whitenoise": "n",
+  "use_sentry": "y",
+  "use_whitenoise": "y",
   "ci_tool": [
-    "None",
-    "Travis",
+    "Github",
     "Gitlab",
-    "Github"
+    "Travis",
+    "None"
   ],
   "keep_local_envs_in_vcs": "y",
-  "debug": "n"
+  "debug": "y"
 }
