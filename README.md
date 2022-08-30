@@ -118,9 +118,6 @@ Answer the prompts with your own desired [options](http://cookiecutter-django.re
     timezone [UTC]: America/Los_Angeles
     use_pycharm [n]: y
     use_docker [n]: n
-    Select postgresql_version:
-    1 - 14
-    Choose from 1 [1]: 1
     Select cloud_provider:
     1 - AWS
     2 - GCP
@@ -139,11 +136,6 @@ Answer the prompts with your own desired [options](http://cookiecutter-django.re
     Choose from 1, 2, 3, 4, 5, 6, 7, 8, 9 [1]: 1
     use_async [n]: n
     use_drf [n]: y
-    Select frontend_pipeline:
-    1 - None
-    2 - Django Compressor
-    3 - Gulp
-    Choose from 1, 2, 3, 4 [1]: 1
     use_celery [n]: y
     use_mailhog [n]: n
     use_sentry [n]: y

@@ -16,9 +16,6 @@
   "timezone": "UTC",
   "use_pycharm": "y",
   "use_docker": "y",
-  "postgresql_version": [
-    "14"
-  ],
   "cloud_provider": [
     "GCP",
     "AWS",
