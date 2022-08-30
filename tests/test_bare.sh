@@ -35,10 +35,6 @@ python manage.py check --fail-level WARNING
 if [ -f "package.json" ]
 then
     npm install
-    if [ -f "gulpfile.js" ]
-    then
-        npm run build
-    fi
 fi
 
 # Generate the HTML for the documentation
