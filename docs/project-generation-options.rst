@@ -49,15 +49,6 @@ use_pycharm:
 use_docker:
     Indicates whether the project should be configured to use Docker_ and `Docker Compose`_.
 
-postgresql_version:
-    Select a PostgreSQL_ version to use. The choices are:
-
-    1. 14
-    2. 13
-    3. 12
-    4. 11
-    5. 10
-
 cloud_provider:
     Select a cloud provider for static & media files. The choices are:
 

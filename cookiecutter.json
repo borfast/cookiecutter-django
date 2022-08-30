@@ -17,11 +17,7 @@
   "use_pycharm": "y",
   "use_docker": "y",
   "postgresql_version": [
-    "14",
-    "13",
-    "12",
-    "11",
-    "10"
+    "14"
   ],
   "cloud_provider": [
     "GCP",
