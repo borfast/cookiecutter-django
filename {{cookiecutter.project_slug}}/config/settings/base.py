@@ -75,7 +75,8 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",
-    "crispy_bootstrap5",
+    'tailwind',
+    'crispy_tailwind',
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
@@ -210,8 +211,9 @@ TEMPLATES = [
 FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 
 # http://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
-CRISPY_TEMPLATE_PACK = "bootstrap5"
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"
+TAILWIND_APP_NAME = '{{cookiecutter.project_slug}}'
 
 # FIXTURES
 # ------------------------------------------------------------------------------
@@ -315,13 +317,6 @@ ACCOUNT_FORMS = {"signup": "src.users.forms.UserSignupForm"}
 SOCIALACCOUNT_ADAPTER = "src.users.adapters.SocialAccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/forms.html
 SOCIALACCOUNT_FORMS = {"signup": "src.users.forms.UserSocialSignupForm"}
-{% if cookiecutter.frontend_pipeline == 'Django Compressor' -%}
-# django-compressor
-# ------------------------------------------------------------------------------
-# https://django-compressor.readthedocs.io/en/latest/quickstart/#installation
-INSTALLED_APPS += ["compressor"]
-STATICFILES_FINDERS += ["compressor.finders.CompressorFinder"]
-{%- endif %}
 {% if cookiecutter.use_drf == "y" -%}
 # django-rest-framework
 # -------------------------------------------------------------------------------

@@ -48,7 +48,7 @@ jobs:
           - name: Basic
             args: ""
           - name: Extended
-            args: "use_celery=y use_drf=y frontend_pipeline=Gulp"
+            args: "use_celery=y use_drf=y"
 
     name: "${{ matrix.script.name }} Docker"
     runs-on: ubuntu-latest
@@ -73,9 +73,7 @@ jobs:
       matrix:
         script:
           - name: With Celery
-            args: "use_celery=y frontend_pipeline='Django Compressor'"
-          - name: With Gulp
-            args: "frontend_pipeline='Gulp'"
+            args: "use_celery=y"
 
     name: "${{ matrix.script.name }} Bare metal"
     runs-on: ubuntu-latest

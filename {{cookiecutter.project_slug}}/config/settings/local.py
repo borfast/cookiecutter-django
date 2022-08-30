@@ -42,8 +42,11 @@ EMAIL_BACKEND = env(
 )
 {%- endif %}
 
-{%- if cookiecutter.use_whitenoise == 'y' %}
+# Django browser reload for automatic reloading of pages when something changes
+INSTALLED_APPS += ["django_browser_reload"]
+MIDDLEWARE += ["django_browser_reload.middleware.BrowserReloadMiddleware"]
 
+{%- if cookiecutter.use_whitenoise == 'y' %}
 # WhiteNoise
 # ------------------------------------------------------------------------------
 # http://whitenoise.evans.io/en/latest/django.html#using-whitenoise-in-development
@@ -69,14 +72,6 @@ if env("USE_DOCKER") == "yes":
 
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
     INTERNAL_IPS += [".".join(ip.split(".")[:-1] + ["1"]) for ip in ips]
-    {%- if cookiecutter.frontend_pipeline == 'Gulp' %}
-    try:
-        _, _, ips = socket.gethostbyname_ex("node")
-        INTERNAL_IPS.extend(ips)
-    except socket.gaierror:
-        # The node container isn't started (yet?)
-        pass
-    {%- endif %}
 {%- endif %}
 
 # django-extensions

@@ -22,13 +22,11 @@ django-extensions = "*"
 Pillow = "*"
 python-slugify = "*"
 pre-commit = "*"
-
-{%- if cookiecutter.frontend_pipeline == 'Django Compressor' %}
-rcssmin = "*"
-{%- endif %}
+django-tailwind = "*"
+crispy-tailwind = "*"
 
 {%- if cookiecutter.use_whitenoise == 'y' %}
-whitenoise = "*"
+whitenoise = {extras = ["brotli"], version = "*"}
 {%- endif %}
 
 {%- if cookiecutter.use_docker == "y" %}
@@ -45,10 +43,6 @@ flower = "*"
 
 {%- if cookiecutter.use_async == 'y' %}
 uvicorn = {extras = ["standard"], version = "*"}
-{%- endif %}
-
-{%- if cookiecutter.frontend_pipeline == 'Django Compressor' %}
-django-compressor = "*"
 {%- endif %}
 
 {%- if cookiecutter.use_drf == 'y' %}
@@ -117,6 +111,7 @@ ipdb = "*"
 psycopg2-binary = "*"
 django-stubs = "*"
 factory-boy = "*"
+django-browser-reload = "*"
 
 {%- if cookiecutter.use_async == 'y' or cookiecutter.use_celery == 'y' %}
 watchfiles = "*"

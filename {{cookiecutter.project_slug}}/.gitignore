@@ -338,9 +338,3 @@ src/media/
 .ipython/
 {%- endif %}
 
-{%- if cookiecutter.frontend_pipeline == 'Gulp' %}
-project.css
-project.min.css
-vendors.js
-*.min.js
-{%- endif %}

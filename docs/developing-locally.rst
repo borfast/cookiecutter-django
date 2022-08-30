@@ -100,7 +100,7 @@ Setup Email Backend
 MailHog
 ~~~~~~~
 
-.. note:: In order for the project to support MailHog_ it must have been bootstrapped with ``use_mailhog`` set to ``y``.
+.. note:: In order for the project to support MailHog_ it must have been created with ``use_mailhog`` set to ``y``.
 
 MailHog is used to receive emails during development, it is written in Go and has no external dependencies.
 

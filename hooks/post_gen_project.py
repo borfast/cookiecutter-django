@@ -70,17 +70,6 @@ def remove_utility_files():
     shutil.rmtree("utility")
 
 
-def remove_gulp_files():
-    file_names = ["gulpfile.js"]
-    for file_name in file_names:
-        os.remove(file_name)
-    remove_sass_files()
-
-
-def remove_sass_files():
-    shutil.rmtree(os.path.join("src", "static", "sass"))
-
-
 def remove_packagejson_file():
     file_names = ["package.json"]
     for file_name in file_names:
@@ -307,6 +296,11 @@ def remove_storages_module():
     os.remove(os.path.join("src", "utils", "storages.py"))
 
 
+def remove_bootstrap_files():
+    os.remove(os.path.join("src", "static", "sass", "custom_bootstrap_vars.scss"))
+    os.remove(os.path.join("src", "static", "sass", "project.scss"))
+
+
 def main():
     debug = "{{ cookiecutter.debug }}".lower() == "y"
 
@@ -348,12 +342,6 @@ def main():
         append_to_gitignore_file(".envs/*")
         if "{{ cookiecutter.keep_local_envs_in_vcs }}".lower() == "y":
             append_to_gitignore_file("!.envs/.local/")
-
-    if "{{ cookiecutter.frontend_pipeline }}" != "Gulp":
-        remove_gulp_files()
-        remove_packagejson_file()
-        if "{{ cookiecutter.use_docker }}".lower() == "y":
-            remove_node_dockerfile()
 
     if "{{ cookiecutter.cloud_provider}}" == "None":
         print(

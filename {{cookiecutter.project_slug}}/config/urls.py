@@ -49,6 +49,7 @@ if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
     # these url in browser to see how these error pages look like.
     urlpatterns += [
+        path("__reload__/", include("django_browser_reload.urls")),
         path(
             "400/",
             default_views.bad_request,
