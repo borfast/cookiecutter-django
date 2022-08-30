@@ -65,7 +65,7 @@ target/
 celerybeat-schedule
 
 # Environments
-.env
+{{cookiecutter.project_slug}}/.env
 .venv
 env/
 venv/
