@@ -93,6 +93,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "src.users",
+    "src.theme",
     "src.{{ cookiecutter.project_slug }}"
     # Your stuff: custom apps go here
 ]
@@ -214,7 +215,7 @@ FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 # http://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
-TAILWIND_APP_NAME = "{{cookiecutter.project_slug}}"
+TAILWIND_APP_NAME = "theme"
 
 # FIXTURES
 # ------------------------------------------------------------------------------
