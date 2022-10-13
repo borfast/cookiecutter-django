@@ -10,6 +10,12 @@
 License: {{cookiecutter.open_source_license}}
 {%- endif %}
 
+## Setup
+
+You'll need to run `python manage.py tailwind install` to install the dependencies for Tailwind CSS.
+
+You will also need a recent version of npm.
+
 ## Settings
 
 Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
